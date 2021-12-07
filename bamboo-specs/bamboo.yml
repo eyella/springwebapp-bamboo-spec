@@ -1,0 +1,55 @@
+---
+version: 2
+plan:
+  project-key: TES1
+  key: TES1
+  name: Parent Plan
+  description: Parent Plan
+stages:
+  - Default Stage:
+      manual: false
+      final: false
+      jobs:
+        - Default Job
+Default Job:
+  key: JOB1
+  tasks:
+    - checkout:
+        force-clean-build: 'false'
+        description: Checkout Default Repository
+    - maven:
+        executable: Maven
+        jdk: JDK 11
+        goal: clean install
+        description: Maven
+  artifact-subscriptions: []
+repositories:
+  - eyella:
+      scope: global
+triggers:
+  - polling:
+      period: '30'
+branches:
+  create: manually
+  delete: never
+  link-to-jira: true
+notifications: []
+labels: []
+other:
+  concurrent-build-plugin: system-default
+---
+version: 2
+plan:
+  key: TES1-TES1
+plan-permissions:
+  - users:
+      - ryella
+    permissions:
+      - view
+      - edit
+      - build
+      - clone
+      - admin
+      - view_configuration
+...
+
