@@ -28,7 +28,7 @@ repositories:
       scope: global
 triggers:
   - polling:
-      period: '30'
+      period: '20'
 branches:
   create: manually
   delete: never
