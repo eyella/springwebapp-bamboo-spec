@@ -26,6 +26,8 @@ Default Job:
 repositories:
   - eyella:
       scope: global
+  - springwebapp-bamboo-spec:
+      scope: global
 triggers:
   - polling:
       period: '30'
@@ -52,4 +54,3 @@ plan-permissions:
       - admin
       - view_configuration
 ...
-
