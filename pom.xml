@@ -45,5 +45,5 @@
 </dependencies>
 
     <!-- run 'mvn test' to perform offline validation of the plan -->
-    <!-- run 'mvn -Ppublish-specs' to upload the plan to your Bamboo server -->
+    <!-- run 'mvn -Ppublish-specs' to upload the plan to Bamboo server -->
 </project>
