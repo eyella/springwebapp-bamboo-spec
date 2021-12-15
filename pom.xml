@@ -4,13 +4,46 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>org.eyella</groupId>
     <artifactId>springwebapp-bamboo-spec</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <layout>default</layout>
+            <url>https://repo1.maven.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    <parent>
+        <groupId>com.atlassian.bamboo</groupId>
+        <artifactId>bamboo-specs-parent</artifactId>
+        <version>8.0.4</version>
+        <relativePath/>
+    </parent>
+<dependencies>
+    <dependency>
+        <groupId>com.atlassian.bamboo</groupId>
+        <artifactId>bamboo-specs-api</artifactId>
+        <version>8.0.4</version>
+    </dependency>
+    <dependency>
+        <groupId>com.atlassian.bamboo</groupId>
+        <artifactId>bamboo-specs</artifactId>
+        <version>8.0.4</version>
+    </dependency>
+</dependencies>
 
+    <!-- run 'mvn test' to perform offline validation of the plan -->
+    <!-- run 'mvn -Ppublish-specs' to upload the plan to your Bamboo server -->
 </project>
