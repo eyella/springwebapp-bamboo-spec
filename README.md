@@ -1,0 +1,1 @@
+# springwebapp-bamboo-spec
